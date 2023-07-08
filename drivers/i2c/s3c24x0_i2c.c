@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <dm.h>
 #include <fdtdec.h>
-#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5)
+#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5) || defined(CONFIG_ARCH_EXYNOS7)
 #include <log.h>
 #include <asm/arch/clk.h>
 #include <asm/arch/cpu.h>
@@ -53,8 +53,9 @@ static void read_write_byte(struct s3c24x0_i2c *i2c)
 static void i2c_ch_init(struct s3c24x0_i2c *i2c, int speed, int slaveadd)
 {
 	ulong freq, pres = 16, div;
-#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5)
-	freq = get_i2c_clk();
+	//Tmp hack, get_i2c_clk is 32bit exynos insaneness only, and get_PCLK doesn't even exist
+#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5) || defined(CONFIG_ARCH_EXYNOS7)
+	freq = 6625000;//get_i2c_clk();
 #else
 	freq = get_PCLK();
 #endif
@@ -309,7 +310,10 @@ static int s3c_i2c_of_to_plat(struct udevice *dev)
 
 	i2c_bus->regs = dev_read_addr_ptr(dev);
 
+	/* We don't have this for 64bit exynos */
+#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5)
 	i2c_bus->id = pinmux_decode_periph_id(blob, node);
+#endif
 
 	i2c_bus->clock_frequency =
 		dev_read_u32_default(dev, "clock-frequency",
@@ -317,7 +321,10 @@ static int s3c_i2c_of_to_plat(struct udevice *dev)
 	i2c_bus->node = node;
 	i2c_bus->bus_num = dev_seq(dev);
 
+	/* We don't have this for 64bit exynos */
+#if defined(CONFIG_ARCH_EXYNOS4) || defined(CONFIG_ARCH_EXYNOS5)
 	exynos_pinmux_config(i2c_bus->id, 0);
+#endif
 
 	i2c_bus->active = true;
 

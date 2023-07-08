@@ -1,0 +1,6 @@
+Samsung Galaxy A8 2018 Board
+M:	Dávid Virág <virag.david003@gmail.com>
+S:	Maintained
+F:	board/samsung/jackpotlte/
+F:	include/configs/exynos7885-common.h
+F:	configs/jackpotlte_defconfig

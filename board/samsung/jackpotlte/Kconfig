@@ -1,0 +1,24 @@
+config SYS_CONFIG_NAME
+	string "Board configuration name"
+	default "exynos7885-common.h"
+	help
+	  This option contains information about board configuration name.
+	  Based on this option include/configs/<CONFIG_SYS_CONFIG_NAME>.h header
+	  will be used for board configuration.
+
+if TARGET_JACKPOTLTE
+config SYS_BOARD
+	default "jackpotlte"
+	help
+	  jackpotlte is a production board for SM-A530F phone on Exynos7885 SoC.
+
+config SYS_VENDOR
+	default "samsung"
+
+config SYS_CONFIG_NAME
+	default "jackpotlte"
+
+config EXYNOS7885
+    bool "Exynos 7885 SOC support"
+    default y
+endif

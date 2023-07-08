@@ -1,0 +1,177 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung's Exynos7885 SoC pin-mux and pin-config device tree source
+ *
+ * Copyright (c) 2023 Dávid Virág (virag.david003@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/* ALIVE */
+&gpio_0 {
+	etc0: etc0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	etc1: etc1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpa0: gpa0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpa1: gpa1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpa2: gpa2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpq0: gpq0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+};
+
+/* DISPAUD */
+&gpio_1 {
+	gpb0: gpb0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpb1: gpb1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpb2: gpb2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+};
+
+/* FSYS */
+&gpio_2 {
+	gpf0: gpf0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpf1: gpf1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpf2: gpf2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpf3: gpf3 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpf4: gpf4 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+};
+
+/* TOP */
+&gpio_3 {
+	gpp0: gpp0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpg0: gpg0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp1: gpp1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp2: gpp2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp3: gpp3 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp4: gpp4 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp5: gpp5 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp6: gpp6 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp7: gpp7 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpp8: gpp8 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpg1: gpg1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpg2: gpg2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpg3: gpg3 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpg4: gpg4 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpc0: gpc0 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpc1: gpc1 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+
+	gpc2: gpc2 {
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+};

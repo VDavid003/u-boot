@@ -1,0 +1,97 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung Exynos7885 SoC device tree source
+ *
+ * Copyright (c) 2023 Dávid Virág (virag.david003@gmail.com)
+ */
+
+/dts-v1/;
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+/ {
+	compatible = "samsung,exynos7885";
+	#address-cells = <2>;
+	#size-cells = <1>;
+
+	/* ALIVE */
+	gpio_0: gpio@11CB0000 {
+		compatible = "samsung,exynos7885-gpio";
+		reg = <0x0 0x11CB0000 0x1000>;
+	};
+
+	/* DISPAUD */
+	gpio_1: gpio@148F0000 {
+		compatible = "samsung,exynos7885-gpio";
+		reg = <0x0 0x148F0000 0x1000>;
+	};
+
+	/* FSYS */
+	gpio_2: gpio@13430000 {
+		compatible = "samsung,exynos7885-gpio";
+		reg = <0x0 0x13430000 0x1000>;
+	};
+
+	/* TOP */
+	gpio_3: gpio@139B0000 {
+		compatible = "samsung,exynos7885-gpio";
+		reg = <0x0 0x139B0000 0x1000>;
+	};
+
+	/* ALIVE */
+	pinctrl_0: pinctrl@11CB0000 {
+		compatible = "samsung,exynos7885-pinctrl";
+		reg = <0x0 0x11CB0000 0x1000>;
+	};
+
+	/* DISPAUD */
+	pinctrl_1: pinctrl@148F0000 {
+		compatible = "samsung,exynos7885-pinctrl";
+		reg = <0x0 0x148F0000 0x1000>;
+	};
+
+	/* FSYS */
+	pinctrl_2: pinctrl@13430000 {
+		compatible = "samsung,exynos7885-pinctrl";
+		reg = <0x0 0x13430000 0x1000>;
+	};
+
+	/* TOP */
+	pinctrl_3: pinctrl@139B0000 {
+		compatible = "samsung,exynos7885-pinctrl";
+		reg = <0x0 0x139B0000 0x1000>;
+	};
+
+	/* Dummy clock for uart, TODO proper driver */
+	fin_uart: uart_dummy_fin {
+		compatible = "fixed-clock";
+		clock-output-names = "fin_uart";
+		clock-frequency = <132710400>;
+		u-boot,dm-pre-reloc;
+		#clock-cells = <0>;
+	};
+
+	uart2: serial@13820000 {
+		compatible = "samsung,exynos4210-uart";
+		reg = <0x0 0x13820000 0x100>;
+		u-boot,dm-pre-reloc;
+		clocks = <&fin_uart>, <&fin_uart>;
+		clock-names = "uart", "clk_uart_baud0";
+		pinctrl-names = "default";
+		pinctrl-0 = <&uart2_bus>;
+		samsung,uart-fifosize = <256>;
+	};
+
+	i2c_1: i2c-1 {
+		compatible = "samsung,s3c2440-i2c";
+		reg = <0x0 0x13840000 0x100>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&i2c1_bus>;
+		clocks = <&fin_uart>;
+		clock-names = "i2c";
+		status = "disabled";
+	};
+};
+
+#include "exynos7885-pinctrl.dtsi"
+#include "exynos7885-gpio.dtsi"
