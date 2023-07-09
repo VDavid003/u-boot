@@ -55,8 +55,8 @@
 #ifndef EXYNOS_DEVICE_SETTINGS
 #define EXYNOS_DEVICE_SETTINGS \
 	"stdin=serial\0" \
-	"stdout=serial\0" \
-	"stderr=serial\0"
+	"stdout=serial,vidconsole\0" \
+	"stderr=serial,vidconsole\0"
 #endif
 
 #ifndef EXYNOS_FDTFILE_SETTING
