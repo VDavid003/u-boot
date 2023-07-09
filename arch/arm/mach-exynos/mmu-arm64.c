@@ -109,14 +109,7 @@ static struct mm_region exynos7885_mem_map[] = {
 	{
 		.virt	= 0x80000000UL,
 		.phys	= 0x80000000UL,
-		.size	= 0x3DA00000UL,
-		.attrs	= PTE_BLOCK_MEMTYPE(MT_NORMAL) |
-				PTE_BLOCK_INNER_SHARE,
-	},
-	{
-		.virt	= 0xC0000000UL,
-		.phys	= 0xC0000000UL,
-		.size	= 0x40000000UL,
+		.size	= 0x80000000UL,
 		.attrs	= PTE_BLOCK_MEMTYPE(MT_NORMAL) |
 				PTE_BLOCK_INNER_SHARE,
 	},

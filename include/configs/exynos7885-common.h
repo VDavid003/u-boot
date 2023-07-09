@@ -25,7 +25,7 @@
 #define CFG_SYS_BAUDRATE_TABLE \
 	{9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600}
 
-#define CFG_SYS_SDRAM_BASE		0x90000000 //For some reason it doesn't work with 0x80000000, works with 0x814B0000 and onwards tho.
+#define CFG_SYS_SDRAM_BASE		0x80000000
 /* DRAM Memory Banks */
 #define SDRAM_BANK_SIZE		(256UL << 20UL)	/* 256 MB */
 #define PHYS_SDRAM_1		CFG_SYS_SDRAM_BASE
@@ -49,7 +49,7 @@
 #ifndef MEM_LAYOUT_ENV_SETTINGS
 #define MEM_LAYOUT_ENV_SETTINGS \
 	"bootm_size=0x10000000\0" \
-	"bootm_low=0x90000000\0"
+	"bootm_low=0x80000000\0"
 #endif
 
 #ifndef EXYNOS_DEVICE_SETTINGS

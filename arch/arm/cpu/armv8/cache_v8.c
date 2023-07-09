@@ -497,7 +497,7 @@ __weak void mmu_setup(void)
 			  MEMORY_ATTRIBUTES);
 
 	/* enable the mmu */
-	set_sctlr(get_sctlr() | CR_M);
+	set_sctlr((get_sctlr() | CR_M) & ~CR_A);
 }
 
 /*
