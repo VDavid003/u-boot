@@ -12,6 +12,11 @@
 	#address-cells = <2>;
 	#size-cells = <1>;
 
+	pmu_system_controller: system-controller@11c80000 {
+		compatible = "samsung,exynos7-pmu", "syscon";
+		reg = <0x0 0x11c80000 0x10000>;
+	};
+
 	/* ALIVE */
 	gpio_0: gpio@11CB0000 {
 		compatible = "samsung,exynos7885-gpio";
@@ -95,3 +100,4 @@
 
 #include "exynos7885-pinctrl.dtsi"
 #include "exynos7885-gpio.dtsi"
+#include "exynos-syscon-restart.dtsi"
