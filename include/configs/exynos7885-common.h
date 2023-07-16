@@ -81,6 +81,12 @@
 #endif
 
 #define CFG_EXTRA_ENV_SETTINGS \
+	"bootmenu_0=Boot Arch Linux=setenv bootargs root=/dev/mmcblk0p19;bootm 0x89000000\0"	\
+	"bootmenu_1=Boot PostmarketOS=bootm 0x89000000#pmos\0"	\
+	"bootmenu_2=Start EFI Shell=bootm 0x89000000#efi_sh\0"	\
+	"bootmenu_3=Start GRUB=bootm 0x89000000#grub\0"	\
+	"bootmenu_4=!!!DANGER!!! Connect UART to USB=i2c dev 0; i2c mw 0x3D 0xCA 0x48 1; i2c mw 0x3D 0xC7 0x12 1;bootmenu\0" \
+	"bootmenu_5=Disconnect UART from USB=i2c dev 0; i2c mw 0x3D 0xCA 0x00 1; i2c mw 0x3D 0xC7 0x17 1;bootmenu\0" \
 	EXYNOS_DEVICE_SETTINGS \
 	EXYNOS_FDTFILE_SETTING \
 	MEM_LAYOUT_ENV_SETTINGS
