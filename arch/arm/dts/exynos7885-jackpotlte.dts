@@ -7,6 +7,8 @@
 
 /dts-v1/;
 #include "exynos7885.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
 / {
 	compatible = "samsung,exynos7885";
 
@@ -58,9 +60,57 @@
 		reg = <0x8 0x80000000 0x80000000>;
 	};
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		pinctrl-names = "default";
+		pinctrl-0 = <&key_volup &key_voldown &key_power>;
+
+		volup-key {
+			label = "Volume Up";
+			linux,code = <KEY_UP>;
+			gpios = <&gpa1 5 GPIO_ACTIVE_LOW>;
+		};
+
+		voldown-key {
+			label = "Volume Down";
+			linux,code = <KEY_DOWN>;
+			gpios = <&gpa1 6 GPIO_ACTIVE_LOW>;
+		};
+
+		power-key {
+			label = "Power";
+			linux,code = <KEY_ENTER>;
+			gpios = <&gpa1 7 GPIO_ACTIVE_LOW>;
+			wakeup-source;
+		};
+	};
+
 };
 
 &i2c_1 {
 	status = "okay";
 	u-boot,dm-pre-reloc;
+};
+
+&pinctrl_alive {
+	key_volup: key-volup-pins {
+		samsung,pins = "gpa1-5";
+		samsung,pin-function = <0xf>;
+		samsung,pin-pud = <0x0>;
+		samsung,pin-drv = <0x0>;
+	};
+
+	key_voldown: key-voldown-pins {
+		samsung,pins = "gpa1-6";
+		samsung,pin-function = <0xf>;
+		samsung,pin-pud = <0x0>;
+		samsung,pin-drv = <0x0>;
+	};
+
+	key_power: key-power-pins {
+		samsung,pins = "gpa1-7";
+		samsung,pin-function = <0xf>;
+		samsung,pin-pud = <0x0>;
+		samsung,pin-drv = <0x0>;
+	};
 };

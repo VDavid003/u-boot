@@ -10,7 +10,7 @@
  */
 
 /* ALIVE */
-&gpio_0 {
+&gpio_alive {
 	etc0: etc0 {
 		gpio-controller;
 		#gpio-cells = <2>;
@@ -43,7 +43,7 @@
 };
 
 /* DISPAUD */
-&gpio_1 {
+&gpio_dispaud {
 	gpb0: gpb0 {
 		gpio-controller;
 		#gpio-cells = <2>;
@@ -61,7 +61,7 @@
 };
 
 /* FSYS */
-&gpio_2 {
+&gpio_fsys {
 	gpf0: gpf0 {
 		gpio-controller;
 		#gpio-cells = <2>;
@@ -89,7 +89,7 @@
 };
 
 /* TOP */
-&gpio_3 {
+&gpio_top {
 	gpp0: gpp0 {
 		gpio-controller;
 		#gpio-cells = <2>;

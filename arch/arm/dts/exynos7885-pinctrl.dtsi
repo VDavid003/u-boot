@@ -17,7 +17,7 @@
 };
 
 /* ALIVE */
-&pinctrl_0 {
+&pinctrl_alive {
 	uart2_bus: uart2-bus {
 		samsung,pins = "gpq0-4", "gpq0-3";
 		samsung,pin-function = <2>;
@@ -27,8 +27,7 @@
 };
 
 /* TOP */
-
-&pinctrl_3 {
+&pinctrl_top {
 	i2c1_bus: i2c1-bus {
 		samsung,pins = "gpp1-3", "gpp1-2";
 		samsung,pin-function = <2>;

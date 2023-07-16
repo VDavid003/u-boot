@@ -17,50 +17,42 @@
 		reg = <0x0 0x11c80000 0x10000>;
 	};
 
-	/* ALIVE */
-	gpio_0: gpio@11CB0000 {
+	gpio_alive: gpio@11CB0000 {
 		compatible = "samsung,exynos7885-gpio";
 		reg = <0x0 0x11CB0000 0x1000>;
 	};
 
-	/* DISPAUD */
-	gpio_1: gpio@148F0000 {
+	gpio_dispaud: gpio@148F0000 {
 		compatible = "samsung,exynos7885-gpio";
 		reg = <0x0 0x148F0000 0x1000>;
 	};
 
-	/* FSYS */
-	gpio_2: gpio@13430000 {
+	gpio_fsys: gpio@13430000 {
 		compatible = "samsung,exynos7885-gpio";
 		reg = <0x0 0x13430000 0x1000>;
 	};
 
-	/* TOP */
-	gpio_3: gpio@139B0000 {
+	gpio_top: gpio@139B0000 {
 		compatible = "samsung,exynos7885-gpio";
 		reg = <0x0 0x139B0000 0x1000>;
 	};
 
-	/* ALIVE */
-	pinctrl_0: pinctrl@11CB0000 {
+	pinctrl_alive: pinctrl@11CB0000 {
 		compatible = "samsung,exynos7885-pinctrl";
 		reg = <0x0 0x11CB0000 0x1000>;
 	};
 
-	/* DISPAUD */
-	pinctrl_1: pinctrl@148F0000 {
+	pinctrl_dispaud: pinctrl@148F0000 {
 		compatible = "samsung,exynos7885-pinctrl";
 		reg = <0x0 0x148F0000 0x1000>;
 	};
 
-	/* FSYS */
-	pinctrl_2: pinctrl@13430000 {
+	pinctrl_fsys: pinctrl@13430000 {
 		compatible = "samsung,exynos7885-pinctrl";
 		reg = <0x0 0x13430000 0x1000>;
 	};
 
-	/* TOP */
-	pinctrl_3: pinctrl@139B0000 {
+	pinctrl_top: pinctrl@139B0000 {
 		compatible = "samsung,exynos7885-pinctrl";
 		reg = <0x0 0x139B0000 0x1000>;
 	};
