@@ -17,5 +17,6 @@ int dram_init_banksize(void)
 
 int board_init(void)
 {
+	*((uint32_t*)(0x14860070)) = 0x1281;
 	return 0;
 }
