@@ -1,0 +1,6 @@
+Samsung JACKPOTLTE Board
+M:	David Virag <virag.david003@gmail.com>
+S:	Maintained
+F:	board/samsung/jackpotlte/
+F:	include/configs/jackpotlte.h
+F:	configs/jackpotlte_defconfig

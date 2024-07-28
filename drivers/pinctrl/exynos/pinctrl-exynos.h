@@ -58,6 +58,16 @@ extern const struct samsung_pin_bank_type bank_type_alive;
 		.name		= id			\
 	}
 
+extern const struct samsung_pin_bank_type exynos850_bank_type;
+
+#define EXYNOS850_PIN_BANK(pins, reg, id)		\
+	{						\
+		.type		= &exynos850_bank_type,	\
+		.offset		= reg,			\
+		.nr_pins	= pins,			\
+		.name		= id			\
+	}
+
 /**
  * struct samsung_pin_ctrl: represent a pin controller.
  * @pin_banks: list of pin banks included in this controller.

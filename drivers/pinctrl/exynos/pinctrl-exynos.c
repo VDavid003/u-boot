@@ -17,6 +17,12 @@ const struct samsung_pin_bank_type bank_type_alive = {
 	.reg_offset = { 0x00, 0x04, 0x08, 0x0c, },
 };
 
+/* CON, DAT, PUD, DRV */
+const struct samsung_pin_bank_type exynos850_bank_type = {
+	.fld_width = { 4, 1, 4, 4, },
+	.reg_offset = { 0x00, 0x04, 0x08, 0x0c, },
+};
+
 static const char * const exynos_pinctrl_props[PINCFG_TYPE_NUM] = {
 	[PINCFG_TYPE_FUNC]	= "samsung,pin-function",
 	[PINCFG_TYPE_DAT]	= "samsung,pin-val",

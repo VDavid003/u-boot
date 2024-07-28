@@ -96,7 +96,7 @@ static struct mm_region exynos7880_mem_map[] = {
 
 struct mm_region *mem_map = exynos7880_mem_map;
 
-#elif IS_ENABLED(CONFIG_EXYNOS850)
+#elif IS_ENABLED(CONFIG_EXYNOS850) || IS_ENABLED(CONFIG_EXYNOS7885)
 
 static struct mm_region exynos850_mem_map[] = {
 	{

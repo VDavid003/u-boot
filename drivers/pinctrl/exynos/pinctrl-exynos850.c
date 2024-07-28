@@ -10,20 +10,6 @@
 #include <dm/pinctrl.h>
 #include "pinctrl-exynos.h"
 
-#define EXYNOS850_PIN_BANK(pins, reg, id)		\
-	{						\
-		.type		= &exynos850_bank_type,	\
-		.offset		= reg,			\
-		.nr_pins	= pins,			\
-		.name		= id			\
-	}
-
-/* CON, DAT, PUD, DRV */
-static const struct samsung_pin_bank_type exynos850_bank_type = {
-	.fld_width = { 4, 1, 4, 4, },
-	.reg_offset = { 0x00, 0x04, 0x08, 0x0c, },
-};
-
 static const struct pinctrl_ops exynos850_pinctrl_ops = {
 	.set_state = exynos_pinctrl_set_state
 };
