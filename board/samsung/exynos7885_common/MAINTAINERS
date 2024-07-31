@@ -1,0 +1,7 @@
+Samsung Exynos7885 based boards
+M:	David Virag <virag.david003@gmail.com>
+S:	Maintained
+F:	board/samsung/exynos7885_common/
+F:	include/configs/exynos7885-common.h
+F:	configs/jackpotlte_defconfig
+F:	configs/xcover4s_defconfig

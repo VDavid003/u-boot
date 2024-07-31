@@ -2,4 +2,4 @@
 #
 # Copyright (C) 2024, Dávid Virág
 
-obj-y	:= jackpotlte.o
+obj-y	:= exynos7885_common.o

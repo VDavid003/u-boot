@@ -2,7 +2,7 @@ if ARCH_EXYNOS
 
 config BOARD_COMMON
 	def_bool y
-	depends on !TARGET_SMDKV310 && !TARGET_ARNDALE && !TARGET_E850_96 && !TARGET_JACKPOTLTE
+	depends on !TARGET_SMDKV310 && !TARGET_ARNDALE && !TARGET_E850_96 && !EXYNOS7885
 
 config SPI_BOOTING
 	bool
@@ -251,6 +251,15 @@ config TARGET_JACKPOTLTE
 	select PINCTRL_EXYNOS7885
 	imply OF_UPSTREAM
 
+config TARGET_XCOVER4S
+	bool "Samsung SM-G398FN board"
+	select ARM64
+	select CLK_EXYNOS
+	select OF_CONTROL
+	select PINCTRL
+	select PINCTRL_EXYNOS7885
+	imply OF_UPSTREAM
+
 config TARGET_E850_96
 	bool "WinLink E850-96 board"
 	select ARM64
@@ -289,7 +298,7 @@ source "board/samsung/smdk5250/Kconfig"
 source "board/samsung/smdk5420/Kconfig"
 source "board/samsung/espresso7420/Kconfig"
 source "board/samsung/axy17lte/Kconfig"
-source "board/samsung/jackpotlte/Kconfig"
+source "board/samsung/exynos7885_common/Kconfig"
 source "board/samsung/e850-96/Kconfig"
 
 endif

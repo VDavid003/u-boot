@@ -17,6 +17,8 @@ int dram_init_banksize(void)
 
 int board_init(void)
 {
+#if IS_ENABLED(CONFIG_TARGET_JACKPOTLTE)
 	*((uint32_t*)(0x14860070)) = 0x1281;
+#endif
 	return 0;
 }

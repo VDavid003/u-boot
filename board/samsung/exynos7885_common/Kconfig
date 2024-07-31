@@ -1,0 +1,33 @@
+if TARGET_JACKPOTLTE
+
+config EXYNOS7885
+	bool "Exynos7885 SoC support"
+	default y
+
+config SYS_BOARD
+	default "exynos7885_common"
+
+config SYS_VENDOR
+	default "samsung"
+
+config SYS_CONFIG_NAME
+	default "exynos7885-common"
+
+endif
+
+if TARGET_XCOVER4S
+
+config EXYNOS7885
+	bool "Exynos7885 SoC support"
+	default y
+
+config SYS_BOARD
+	default "exynos7885_common"
+
+config SYS_VENDOR
+	default "samsung"
+
+config SYS_CONFIG_NAME
+	default "exynos7885-common"
+
+endif
