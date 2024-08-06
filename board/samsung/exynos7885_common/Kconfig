@@ -11,7 +11,7 @@ config SYS_VENDOR
 	default "samsung"
 
 config SYS_CONFIG_NAME
-	default "exynos7885-common"
+	default "jackpotlte"
 
 endif
 
@@ -28,6 +28,6 @@ config SYS_VENDOR
 	default "samsung"
 
 config SYS_CONFIG_NAME
-	default "exynos7885-common"
+	default "xcover4s"
 
 endif

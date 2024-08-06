@@ -63,19 +63,19 @@
 
 		volup-key {
 			label = "Volume Up";
-			linux,code = <KEY_VOLUMEUP>;
+			linux,code = <KEY_UP>;
 			gpios = <&gpa1 5 GPIO_ACTIVE_LOW>;
 		};
 
 		voldown-key {
 			label = "Volume Down";
-			linux,code = <KEY_VOLUMEDOWN>;
+			linux,code = <KEY_DOWN>;
 			gpios = <&gpa1 6 GPIO_ACTIVE_LOW>;
 		};
 
 		power-key {
 			label = "Power";
-			linux,code = <KEY_POWER>;
+			linux,code = <KEY_ENTER>;
 			gpios = <&gpa1 7 GPIO_ACTIVE_LOW>;
 			wakeup-source;
 		};
